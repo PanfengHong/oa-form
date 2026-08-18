@@ -9,6 +9,10 @@ export type {
   FieldOption,
   LayoutSchema,
   LayoutType,
+  WidgetDefinition,
+  WidgetRuntimeProps,
+  WidgetDesignProps,
+  WidgetConfigProps,
 } from '@zdy-oa/designer'
 
 /**
