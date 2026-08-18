@@ -1,24 +1,26 @@
-export type FormFieldType =
-  | 'text'
-  | 'textarea'
-  | 'number'
-  | 'date'
-  | 'select'
-  | 'user-picker'
+// 布局相关类型由 oa-designer 维护，form 通过 `import type` 引用
+// 编译后类型引用会被擦除，运行时 form 不依赖 designer
+import type { LayoutSchema } from '@zdy-oa/designer'
 
-export interface FormFieldSchema {
-  id: string
-  type: FormFieldType
-  label: string
-  required?: boolean
-  placeholder?: string
-  options?: { label: string; value: string }[]
-}
+// 重新导出，方便业务侧从 oa-form 统一引用
+export type {
+  FieldSchema,
+  FieldType,
+  FieldOption,
+  LayoutSchema,
+  LayoutType,
+} from '@zdy-oa/designer'
 
+/**
+ * 表单 Schema
+ * 表单本体信息，layout 字段嵌入 designer 的设计产物
+ */
 export interface FormSchema {
   id: string
-  title: string
-  fields: FormFieldSchema[]
+  name: string
+  layout: LayoutSchema
+  createdAt: string
+  updatedAt: string
 }
 
-export type FormValues = Record<string, string | number | undefined>
+export type FormValues = Record<string, string | number | (string | number)[] | undefined>

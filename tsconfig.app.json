@@ -16,6 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "paths": {
+      "@/*": ["./src/*"],
+      "@zdy-oa/utils": ["../oa-utils/src/index.ts"],
+      "@zdy-oa/designer": ["../oa-designer/src/index.ts"],
+    },
+
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
