@@ -28,5 +28,8 @@ export {
 // 示例
 export { sampleLeaveFormSchema } from './samples'
 
+// Mock 数据注册（统一开关启用时由 oa-main 的 mock/setup.ts 调用）
+export { registerFormMocks } from './mock'
+
 // 页面
 export { FormListPage } from './pages/FormListPage'
