@@ -1,4 +1,4 @@
-import type { FieldType, WidgetDefinition } from '@zdy-oa/designer'
+import type { FieldType, WidgetDefinition } from '@zdy-oa/utils'
 
 const widgetRegistry = new Map<FieldType, WidgetDefinition>()
 

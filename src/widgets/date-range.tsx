@@ -6,7 +6,7 @@ import type {
   WidgetDesignProps,
   WidgetConfigProps,
   FieldSchema,
-} from '@zdy-oa/designer'
+} from '@zdy-oa/utils'
 import { BlockOutlined } from '@ant-design/icons'
 
 const RuntimeView: React.FC<WidgetRuntimeProps> = ({ value, onChange, readOnly }) => {

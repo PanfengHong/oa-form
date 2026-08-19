@@ -6,7 +6,7 @@ import type {
   WidgetDesignProps,
   WidgetConfigProps,
   FieldSchema,
-} from '@zdy-oa/designer'
+} from '@zdy-oa/utils'
 
 const RuntimeView: React.FC<WidgetRuntimeProps> = ({ field, value, onChange, readOnly }) => {
   return (

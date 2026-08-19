@@ -88,11 +88,11 @@ function FormListInner() {
     reader.readAsText(file)
   }
 
-  const handleFormNameChange = (e) => {
+  const handleFormNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormName(e.target.value)
   }
 
-  const handleFormDescriptionChange = (e) => {
+  const handleFormDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setFormDescription(e.target.value)
   }
 

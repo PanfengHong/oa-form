@@ -6,13 +6,11 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [
     react(),
-    dts({ rollupTypes: true, tsconfigPath: './tsconfig.build.json' }),
+    dts({ tsconfigPath: './tsconfig.build.json' }),
   ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@zdy-oa/utils': resolve(__dirname, '../oa-utils/src/index.ts'),
-      '@zdy-oa/designer': resolve(__dirname, '../oa-designer/src/index.ts'),
     },
   },
   build: {
@@ -23,7 +21,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@zdy-oa/utils'],
     },
   },
 })

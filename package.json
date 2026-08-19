@@ -21,8 +21,7 @@
     "lint": "oxlint"
   },
   "dependencies": {
-    "@zdy-oa/utils": "file:../oa-utils",
-    "@zdy-oa/designer": "file:../oa-designer"
+    "@zdy-oa/utils": "file:../oa-utils"
   },
   "peerDependencies": {
     "@ant-design/icons": "^6.0.0",
