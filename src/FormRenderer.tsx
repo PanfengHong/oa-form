@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Button as AntButton } from 'antd'
-import type { FormSchema, FormValues } from './types'
+import type { FieldSchema, FormSchema, FormValues } from './types'
 import { getWidget } from './widgets'
 import './form.css'
 
@@ -58,7 +58,7 @@ export function FormRenderer({
         <span className="oa-form__meta">布局引擎 · oa-form</span>
       </header>
 
-      {layout.fields.map((field) => {
+      {layout.fields.map((field: FieldSchema) => {
         const widget = getWidget(field.type)
 
         const spanCol =
