@@ -14,7 +14,7 @@ const RuntimeView: React.FC<WidgetRuntimeProps> = ({ field, value, onChange, rea
       value={value as number | undefined}
       placeholder={field.placeholder}
       disabled={readOnly}
-      onChange={(v: number) => onChange?.(v ?? '')}
+      onChange={(v: number | null) => onChange?.(v ?? '')}
       style={{ width: '100%' }}
     />
   )
