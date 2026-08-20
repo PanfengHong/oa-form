@@ -95,7 +95,7 @@ export function FormRenderer({
             <widget.RuntimeView
               field={field}
               value={values[field.id]}
-              onChange={(v) => updateField(field.id, v)}
+              onChange={(v: string | number | (string | number)[]) => updateField(field.id, v)}
               readOnly={readOnly}
             />
           </div>

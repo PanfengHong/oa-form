@@ -16,7 +16,7 @@ const RuntimeView: React.FC<WidgetRuntimeProps> = ({ field, value, onChange, rea
       options={field.options ?? []}
       placeholder={field.placeholder}
       disabled={readOnly}
-      onChange={(v) => onChange?.(v as (string | number)[])}
+      onChange={(v: (string | number)[]) => onChange?.(v)}
       suffixIcon={<UserOutlined />}
       style={{ width: '100%' }}
     />
@@ -53,7 +53,7 @@ const ConfigView: React.FC<WidgetConfigProps> = ({ field, onChange }) => {
         />
       </Form.Item>
       <Form.Item label="必填">
-        <Switch checked={!!field.required} onChange={(v) => update({ required: v })} />
+        <Switch checked={!!field.required} onChange={(v: boolean) => update({ required: v })} />
       </Form.Item>
     </Form>
   )

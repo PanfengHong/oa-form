@@ -15,7 +15,7 @@ const RuntimeView: React.FC<WidgetRuntimeProps> = ({ field, value, onChange, rea
       options={field.options ?? []}
       placeholder={field.placeholder}
       disabled={readOnly}
-      onChange={(v) => onChange?.(v as string)}
+      onChange={(v: string) => onChange?.(v)}
       style={{ width: '100%' }}
     />
   )
@@ -49,7 +49,7 @@ const ConfigView: React.FC<WidgetConfigProps> = ({ field, onChange }) => {
         />
       </Form.Item>
       <Form.Item label="必填">
-        <Switch checked={!!field.required} onChange={(v) => update({ required: v })} />
+        <Switch checked={!!field.required} onChange={(v: boolean) => update({ required: v })} />
       </Form.Item>
       <Form.Item label="选项">
         <Flex vertical gap={8}>

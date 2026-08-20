@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons'
 import type { FormSchema } from '../types'
 import { getFormList, createForm, deleteForm } from '../api'
-import { formatDate } from '@zdy-oa/utils'
+import { formatDate, type ResponseData } from '@zdy-oa/utils'
 
 function downloadFormJson(form: FormSchema): void {
   const blob = new Blob([JSON.stringify(form, null, 2)], { type: 'application/json' })
@@ -49,7 +49,7 @@ function FormListInner() {
       "schema": {
         fields: []
       }
-    }).then((res) => {
+    }).then((res: ResponseData) => {
       console.log(res);
       setVisible(false);
       refresh([...forms, res.data])
@@ -133,14 +133,14 @@ function FormListInner() {
 
   useEffect(() => {
     getFormList()
-      .then((res) => {
+      .then((res: ResponseData) => {
         if (res.code === 200) {
           setForms(res.data || []);
         } else {
           message.error(res.message || '加载表单列表失败');
         }
       })
-      .catch((err) => {
+      .catch((err: ResponseData) => {
         console.error('getFormList error:', err?.code, err?.message, err);
         message.error(err?.message || '加载表单列表失败');
       });

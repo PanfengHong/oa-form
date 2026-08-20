@@ -43,7 +43,7 @@ const ConfigView: React.FC<WidgetConfigProps> = ({ field, onChange }) => {
         />
       </Form.Item>
       <Form.Item label="必填">
-        <Switch checked={!!field.required} onChange={(v) => update({ required: v })} />
+        <Switch checked={!!field.required} onChange={(v: boolean) => update({ required: v })} />
       </Form.Item>
     </Form>
   )
