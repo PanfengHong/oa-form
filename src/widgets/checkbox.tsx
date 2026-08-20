@@ -6,7 +6,9 @@ import type {
   WidgetDesignProps,
   WidgetConfigProps,
   FieldSchema,
+  FieldOption,
 } from '@zdy-oa/utils'
+
 
 const RuntimeView: React.FC<WidgetRuntimeProps> = ({ field, value, onChange, readOnly }) => {
   return (
@@ -41,7 +43,7 @@ const ConfigView: React.FC<WidgetConfigProps> = ({ field, onChange }) => {
       </Form.Item>
       <Form.Item label="选项">
         <Flex vertical gap={8}>
-          {(field.options ?? []).map((opt, i) => (
+          {(field.options ?? []).map((opt: FieldOption, i: number) => (
             <Flex key={i} gap={8} align="center">
               <Input
                 placeholder="显示名"
